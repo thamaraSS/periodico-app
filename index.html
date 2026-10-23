@@ -31,12 +31,13 @@
                 radial-gradient(circle at 80% 80%, rgba(255, 215, 0, 0.12) 0%, transparent 40%),
                 radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
             background-size: 100% 100%, 100% 100%, 24px 24px;
+            overflow-x: hidden;
         }
 
         header {
             background: rgba(11, 10, 18, 0.95);
             border-bottom: 1px solid rgba(255, 215, 0, 0.3);
-            padding: 15px 30px;
+            padding: 15px 20px;
             position: sticky;
             top: 0;
             z-index: 100;
@@ -49,19 +50,21 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            width: 100%;
         }
 
-        .logo-section { display: flex; align-items: center; gap: 20px; }
+        .logo-section { display: flex; align-items: center; gap: 15px; }
 
         .logo-shield {
-            width: 110px; 
-            height: 110px;
+            width: 90px; 
+            height: 90px;
             object-fit: contain;
             border-radius: 50%;
             border: 3px solid var(--gold);
             box-shadow: 0 0 22px var(--gold-glow), 0 0 12px var(--fuchsia-glow);
             background: #000;
             transition: transform 0.3s ease;
+            flex-shrink: 0;
         }
 
         .logo-shield:hover { transform: scale(1.08); }
@@ -96,22 +99,23 @@
             margin-top: 2px;
         }
 
-        .header-actions { display: flex; align-items: center; gap: 12px; }
+        .header-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 
         .btn-kuromi {
             background: linear-gradient(135deg, var(--fuchsia), #B00058);
             color: white;
             border: 1px solid var(--gold);
-            padding: 10px 22px;
+            padding: 10px 18px;
             border-radius: 20px;
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             cursor: pointer;
             box-shadow: 0 0 12px var(--fuchsia-glow);
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 6px;
         }
 
@@ -124,15 +128,16 @@
             background: linear-gradient(135deg, #25D366, #128C7E);
             color: white;
             border: 1px solid #25D366;
-            padding: 10px 20px;
+            padding: 10px 18px;
             border-radius: 20px;
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-decoration: none;
             box-shadow: 0 0 12px rgba(37, 211, 102, 0.4);
             transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 6px;
         }
 
@@ -143,15 +148,15 @@
 
         .hero-section {
             max-width: 1000px;
-            margin: 40px auto 20px auto;
+            margin: 30px auto 20px auto;
             text-align: center;
-            padding: 0 20px;
+            padding: 0 15px;
         }
 
         .hero-title-main {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             font-weight: 900;
-            line-height: 1.1;
+            line-height: 1.2;
             text-transform: uppercase;
             color: #FFFFFF;
             letter-spacing: 1px;
@@ -165,9 +170,9 @@
 
         .hero-title-gold {
             color: var(--gold);
-            font-size: 2.2rem;
+            font-size: 2rem;
             margin-top: 5px;
-            letter-spacing: 4px;
+            letter-spacing: 3px;
             text-shadow: 0 0 15px var(--gold-glow);
         }
 
@@ -184,8 +189,8 @@
         .hero-buttons {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin: 30px 0;
+            gap: 12px;
+            margin: 25px 0;
             flex-wrap: wrap;
         }
 
@@ -193,10 +198,10 @@
             background: linear-gradient(135deg, #FF007F, #B00058);
             color: white;
             border: none;
-            padding: 12px 28px;
+            padding: 12px 24px;
             border-radius: 12px;
             font-weight: 800;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             cursor: pointer;
             box-shadow: 0 0 20px var(--fuchsia-glow);
             display: flex; align-items: center; gap: 8px;
@@ -207,10 +212,10 @@
             background: transparent;
             color: var(--gold);
             border: 2px solid var(--gold);
-            padding: 12px 28px;
+            padding: 12px 24px;
             border-radius: 12px;
             font-weight: 800;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             cursor: pointer;
             box-shadow: 0 0 15px var(--gold-glow);
             display: flex; align-items: center; gap: 8px;
@@ -222,11 +227,11 @@
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            max-width: 500px;
-            margin: 0 auto 40px auto;
+            gap: 15px;
+            max-width: 450px;
+            margin: 0 auto 30px auto;
             border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 25px;
+            padding-top: 20px;
         }
 
         .stat-card {
@@ -237,7 +242,7 @@
             text-align: center;
         }
 
-        .stat-number { font-size: 1.5rem; font-weight: 900; }
+        .stat-number { font-size: 1.4rem; font-weight: 900; }
         .stat-number.gold { color: var(--gold); }
         .stat-number.fuchsia { color: var(--fuchsia); }
 
@@ -253,26 +258,17 @@
         .main-layout {
             max-width: 1240px;
             margin: 0 auto 40px auto;
-            padding: 0 20px;
+            padding: 0 15px;
             display: grid;
             grid-template-columns: 2.2fr 1fr;
             gap: 25px;
-        }
-
-        @media (max-width: 900px) {
-            .main-layout { grid-template-columns: 1fr; }
-            .hero-title-main { font-size: 2rem; }
-            .hero-title-gold { font-size: 1.6rem; }
-            .stats-grid { grid-template-columns: 1fr; }
-            .logo-shield { width: 80px; height: 80px; }
-            .header-actions { flex-wrap: wrap; }
         }
 
         .kuromi-card {
             background: var(--card-bg);
             border: 1px solid rgba(255, 215, 0, 0.3);
             border-radius: 16px;
-            padding: 22px;
+            padding: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.6);
             backdrop-filter: blur(10px);
             margin-bottom: 20px;
@@ -285,6 +281,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
         }
 
         .card-title { color: var(--gold); font-size: 1.2rem; font-weight: 800; }
@@ -339,6 +337,7 @@
             padding: 16px;
             border-radius: 10px;
             margin-bottom: 15px;
+            word-wrap: break-word;
         }
 
         .news-media {
@@ -352,7 +351,7 @@
             border: 2px solid var(--gold);
             box-shadow: 0 0 25px var(--gold-glow), inset 0 0 15px rgba(255, 20, 147, 0.2);
             border-radius: 18px;
-            padding: 25px;
+            padding: 22px;
             margin-bottom: 25px;
         }
 
@@ -369,7 +368,7 @@
 
         .lock-notice {
             text-align: center;
-            padding: 40px 20px;
+            padding: 30px 15px;
             background: rgba(20, 15, 30, 0.7);
             border: 1px dashed var(--fuchsia);
             border-radius: 16px;
@@ -377,7 +376,7 @@
 
         .lock-notice h3 {
             color: var(--gold);
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             margin-bottom: 10px;
         }
 
@@ -400,11 +399,85 @@
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0,0,0,0.85); justify-content: center; align-items: center; z-index: 1000;
             backdrop-filter: blur(5px);
+            padding: 15px;
         }
+
         .modal-content {
             background: var(--black-bg); border: 2px solid var(--gold);
-            padding: 30px; border-radius: 20px; width: 90%; max-width: 420px;
+            padding: 25px; border-radius: 20px; width: 100%; max-width: 420px;
             box-shadow: 0 0 30px var(--fuchsia-glow);
+        }
+
+        /* --- MEDIA QUERY RESPONSIVA --- */
+        @media (max-width: 850px) {
+            header {
+                padding: 12px;
+            }
+
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .logo-section {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .logo-shield {
+                width: 75px;
+                height: 75px;
+            }
+
+            .brand-header-line {
+                justify-content: center;
+            }
+
+            .brand-title {
+                font-size: 1.8rem;
+            }
+
+            .header-actions {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero-title-main {
+                font-size: 1.6rem;
+            }
+
+            .hero-title-gold {
+                font-size: 1.3rem;
+                letter-spacing: 2px;
+            }
+
+            .hero-description {
+                font-size: 0.85rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn-hero-primary, .btn-hero-secondary {
+                justify-content: center;
+            }
+
+            .main-layout {
+                grid-template-columns: 1fr;
+                padding: 0 10px;
+            }
+
+            .card-header {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            #filtro-cat {
+                width: 100% !important;
+            }
         }
     </style>
 </head>
@@ -470,7 +543,6 @@
             <div class="kuromi-card">
                 <div class="card-header">
                     <h2 class="card-title">📰 Publicaciones Oficiales</h2>
-                    <!-- SELECTOR DE FILTRO CON INFRAESTRUCTURA -->
                     <select id="filtro-cat" style="width: auto; padding: 6px 12px; margin: 0;" onchange="cargarNoticias()">
                         <option value="Todas">Todas las categorías</option>
                         <option value="Infraestructura">Infraestructura</option>
@@ -500,7 +572,6 @@
                 <form id="form-noticia">
                     <input type="text" id="tit" placeholder="Título de la publicación" required>
                     
-                    <!-- SELECTOR DEL FORMULARIO CON INFRAESTRUCTURA -->
                     <select id="cat">
                         <option value="Infraestructura">Infraestructura</option>
                         <option value="Académico">Académico</option>
@@ -582,8 +653,8 @@
     </div>
 
     <script>
-        const HOST = window.location.hostname;
-        const API = 'https://periodico-api-inframen.onrender.com/api';
+        const BASE_RENDER = 'https://periodico-api-inframen.onrender.com';
+        const API = `${BASE_RENDER}/api`;
         let token = localStorage.getItem('token');
         let user = JSON.parse(localStorage.getItem('user'));
 
@@ -645,7 +716,7 @@
                         <p style="color:#A0A0B0; font-size:0.9rem; margin-bottom:18px;">
                             Para ver las publicaciones y artículos del periódico escolar INFRAMEN debes iniciar sesión o registrarte.
                         </p>
-                        <div style="display:flex; justify-content:center; gap:10px;">
+                        <div style="display:flex; justify-content:center; gap:10px; flex-wrap:wrap;">
                             <button class="btn-kuromi" onclick="abrirModal('modal-login')">Iniciar Sesión</button>
                             <button class="btn-kuromi" style="background:#111;" onclick="abrirModal('modal-registro')">Registrarse</button>
                         </div>
@@ -672,7 +743,7 @@
                     <div class="news-item">
                         <h3 style="color:var(--gold);">${n.titulo} <small style="color:var(--fuchsia); font-size:0.75rem;">[${n.categoria}]</small></h3>
                         <p style="margin-top:8px; line-height:1.4;">${n.contenido}</p>
-                        ${n.media_url ? (n.media_tipo === 'imagen' ? `<img src="http://${HOST}:3000${n.media_url}" class="news-media">` : `<video src="http://${HOST}:3000${n.media_url}" controls class="news-media"></video>`) : ''}
+                        ${n.media_url ? (n.media_tipo === 'imagen' ? `<img src="${BASE_RENDER}${n.media_url}" class="news-media">` : `<video src="${BASE_RENDER}${n.media_url}" controls class="news-media"></video>`) : ''}
                         <div style="margin-top:12px; font-size:0.8rem; color:#888; display:flex; justify-content:space-between; align-items:center;">
                             <span>Por: <b>${n.autor || 'Admin'}</b></span>
                             ${user && user.rol === 'admin' ? `<button onclick="borrarNoticia(${n.id})" style="color:#ff4444; background:none; border:none; cursor:pointer; font-weight:bold;">Eliminar</button>` : ''}
@@ -680,7 +751,7 @@
                     </div>
                 `).join('');
             } catch (err) {
-                newsContainer.innerHTML = '<p style="color:#ff4444; margin-top:15px;">Asegúrate de que la terminal con "node server.js" esté encendida.</p>';
+                newsContainer.innerHTML = '<p style="color:#ff4444; margin-top:15px;">Error al conectar con la API de Render.</p>';
             }
         }
 
@@ -708,7 +779,7 @@
                     alert(data.mensaje || 'Error al iniciar sesión');
                 }
             } catch (err) {
-                alert('No se pudo conectar con el servidor Node.js (Puerto 3000).');
+                alert('No se pudo conectar con el servidor de Render.');
             }
         });
 
